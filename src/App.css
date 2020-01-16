@@ -1,0 +1,9 @@
+#root{
+  background-color: azure;
+  height: 100%;
+  min-height: 100%;
+}
+
+.App-header{
+  text-align: center;
+}
