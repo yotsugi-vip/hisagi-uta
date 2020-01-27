@@ -28,7 +28,7 @@ function Header() {
     <header className="App-header">
       <img
         style={{
-          width: "100%"
+          width: "70%"
         }}
         src={Header_img}
         alt="header banner"
