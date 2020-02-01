@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "./App.css";
-import Header_img from "./picture/utsHisagi.jpg";
+import Header_img from "./picture/header.png";
 import { match_result, uta_movie_url, hisagi_movie_url } from "./data";
 import hoko_img from "./picture/hoko.png";
 import asari_img from "./picture/asari.png";
@@ -39,28 +39,71 @@ function Header() {
 
 function Body() {
   return (
-    <div>
+    <div style={{ width: "100%", backgroundColor: "azure" }}>
       <details
         style={{
           border: "1px solid",
           borderRadius: "4px"
         }}
+        open
       >
         <summary>
           第一周
-          <div style={{ display: "flex", justifyContent: "space-around" }}>
-            <p>楸 {hisagiWinCalc(1)} 勝</p>
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "space-around",
+              fontWeight: "900",
+              fontsize: "30px"
+            }}
+          >
             <p>炉龍うた {5 - hisagiWinCalc(1)} 勝</p>
+            <p>楸 {hisagiWinCalc(1)} 勝</p>
           </div>
         </summary>
+
         {match_result.order1.map((match, i) => (
-          <div key={i}>
-            <div style={{ display: "flex", justifyContent: "space-around" }}>
+          <div
+            className={"match" + i}
+            key={i}
+            style={{
+              backgroundImage: `url(${
+                match.rule === "ナワバリバトル"
+                  ? nawabari_img
+                  : match.rule === "ガチエリア"
+                  ? area_img
+                  : match.rule === "ガチホコバトル"
+                  ? hoko_img
+                  : match.rule === "ガチヤグラ"
+                  ? tower_img
+                  : match.rule === "ガチアサリ"
+                  ? asari_img
+                  : nawabari_img
+              })`,
+              backgroundRepeat: "no-repeat",
+              backgroundPosition: "center",
+              backgroundColor: "rgba(255,255,255,0.8)",
+              backgroundBlendMode: "lighten",
+              padding:"40px 0px",
+              margin:"15px 0px"
+            }}
+          >
+            <div style={{ display: "flex", justifyContent: "space-evenly" }}>
               <p
                 style={
                   match.team1.win
-                    ? { color: "orange", fontWeight: "900" }
-                    : { color: "blue", fontWeight: "900" }
+                    ? {
+                        color: "orange",
+                        fontWeight: "900",
+                        fontSize: "20px",
+                        margin: "0px"
+                      }
+                    : {
+                        color: "blue",
+                        fontWeight: "900",
+                        fontSize: "20px",
+                        margin: "0px"
+                      }
                 }
               >
                 {match.team1.win ? "WIN" : "LOSE"}
@@ -68,21 +111,22 @@ function Body() {
               <p
                 style={
                   match.team2.win
-                    ? { color: "orange", fontWeight: "900" }
-                    : { color: "blue", fontWeight: "900" }
+                    ? {
+                        color: "orange",
+                        fontWeight: "900",
+                        fontSize: "20px",
+                        margin: "0px"
+                      }
+                    : {
+                        color: "blue",
+                        fontWeight: "900",
+                        fontSize: "20px",
+                        margin: "0px"
+                      }
                 }
               >
                 {match.team2.win ? "WIN" : "LOSE"}
               </p>
-            </div>
-            <div
-              style={{
-                display: "flex",
-                justifyContent: "space-around"
-              }}
-            >
-              <a href={hisagi_movie_url + match.hisagi_movie}>楸 試合リンク</a>
-              <a href={uta_movie_url + match.uta_movie}>炉龍うた 試合リンク</a>
             </div>
             <div className="ul-team">
               <ul className="li-all">
@@ -90,36 +134,20 @@ function Body() {
                   <li key={i}>{player}</li>
                 ))}
               </ul>
-              <ul
-                style={{
-                  listStyle: "none"
-                }}
-              >
-                <li>
-                  <img
-                    src={
-                      match.rule === "ナワバリバトル"
-                        ? nawabari_img
-                        : match.rule === "ガチエリア"
-                        ? area_img
-                        : match.rule === "ガチホコバトル"
-                        ? hoko_img
-                        : match.rule === "ガチヤグラ"
-                        ? tower_img
-                        : match.rule === "ガチアサリ"
-                        ? asari_img
-                        : nawabari_img
-                    }
-                    alt="rules"
-                  />
-                </li>
-                <li>{match.rule}</li>
-              </ul>
               <ul className="li-all">
                 {match.team2.member.player.map((player, i) => (
                   <li key={i}>{player}</li>
                 ))}
               </ul>
+            </div>
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "space-evenly"
+              }}
+            >
+              <a href={hisagi_movie_url + match.hisagi_movie}>楸 試合リンク</a>
+              <a href={uta_movie_url + match.uta_movie}>炉龍うた 試合リンク</a>
             </div>
           </div>
         ))}

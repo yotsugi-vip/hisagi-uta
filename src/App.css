@@ -10,10 +10,13 @@
 
 .ul-team {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
+  
 }
 
 .li-all {  
   list-style-type: none;
-  text-align: left;
+  padding: 10px;
+  font-weight: 600;
+  margin: 0px;
 }
