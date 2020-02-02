@@ -4,17 +4,46 @@
   text-align: center;
 }
 
+.container {
+  border: 1px solid;
+  border-radius: 4px;
+  background-color: azure; 
+}
+
 .App-header {
   text-align: center;
 }
 
-.ul-team {
+.match-order {
   display: flex;
-  justify-content: space-evenly;
-  
+  justify-content: space-around;
+  font-weight: 900;
+  font-size: 16px;
 }
 
-.li-all {  
+.match-result {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: rgba(240, 255, 255, 0.8);
+  background-blend-mode: lighten;
+  padding: 40px 0px;
+  margin: 15px 0px;
+}
+
+.result-display,
+.ul-team,
+.movie-link {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.result-winlose {
+  font-weight: 900;
+  font-size: 20px;
+  margin: 0px;
+}
+
+.li-all {
   list-style-type: none;
   padding: 10px;
   font-weight: 600;

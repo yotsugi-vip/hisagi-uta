@@ -38,8 +38,8 @@ export const team_hisagi = [
   }
 ];
 
-export const match_result = {
-  order1: [
+export const match_result = [
+  [
     {
       rule: "ナワバリバトル",
       stage: "スーメシーワールド",
@@ -121,7 +121,7 @@ export const match_result = {
       uta_movie: "2718"
     }
   ],
-  order2: [
+  [
     {
       rule: "ナワバリバトル",
       stage: "アロワナモール",
@@ -202,5 +202,187 @@ export const match_result = {
       hisagi_movie: "4996",
       uta_movie: "4844"
     }
+  ],
+  [
+    {
+      rule: "ナワバリバトル",
+      stage: "アジフライスタジアム",
+      team1: {
+        member: team_uta[2],
+        win: true,
+        dominance: "57.6"
+      },
+      team2: {
+        member: team_hisagi[2],
+        win: false,
+        domainance: "34.6"
+      },
+      hisagi_movie: "4603",
+      uta_movie: "5451"
+    },
+    {
+      rule: "ガチエリア",
+      stage: "ホッケふ頭",
+      team1: {
+        member: team_uta[2],
+        win: false,
+        dominance: "0"
+      },
+      team2: {
+        member: team_hisagi[2],
+        win: true,
+        domainance: "100"
+      },
+      hisagi_movie: "4984",
+      uta_movie: "5832"
+    },
+    {
+      rule: "ガチアサリ",
+      stage: "タチウオパーキング",
+      team1: {
+        member: team_uta[2],
+        win: false,
+        dominance: "54"
+      },
+      team2: {
+        member: team_hisagi[2],
+        win: true,
+        domainance: "68"
+      },
+      hisagi_movie: "5385",
+      uta_movie: "6230"
+    },
+    {
+      rule: "ガチホコバトル",
+      stage: "アンチョビットゲームズ",
+      team1: {
+        member: team_uta[2],
+        win: false,
+        dominance: "47"
+      },
+      team2: {
+        member: team_hisagi[2],
+        win: true,
+        domainance: "48"
+      },
+      hisagi_movie: "5864",
+      uta_movie: "6712"
+    },
+    {
+      rule: "ガチヤグラ",
+      stage: "ハコフグ倉庫",
+      team1: {
+        member: team_uta[2],
+        win: false,
+        dominance: "47"
+      },
+      team2: {
+        member: team_hisagi[2],
+        win: true,
+        domainance: "77"
+      },
+      hisagi_movie: "6332",
+      uta_movie: "7180"
+    }
+  ],
+  [
+    {
+      rule: "ナワバリバトル",
+      stage: "ザトウマーケット",
+      team1: {
+        member: team_uta[3],
+        win: true,
+        dominance: "65.6"
+      },
+      team2: {
+        member: team_hisagi[3],
+        win: false,
+        domainance: "31.2"
+      },
+      hisagi_movie: "7214",
+      uta_movie: "8062"
+    },
+    {
+      rule: "ガチエリア",
+      stage: "ムツゴ楼",
+      team1: {
+        member: team_uta[3],
+        win: true,
+        dominance: "92"
+      },
+      team2: {
+        member: team_hisagi[3],
+        win: false,
+        domainance: "81"
+      },
+      hisagi_movie: "7575",
+      uta_movie: "8423"
+    },
+    {
+      rule: "ガチアサリ",
+      stage: "フジツボスポーツクラブ",
+      team1: {
+        member: team_uta[3],
+        win: false,
+        dominance: "29"
+      },
+      team2: {
+        member: team_hisagi[3],
+        win: true,
+        domainance: "30"
+      },
+      hisagi_movie: "7996",
+      uta_movie: "8844"
+    },
+    {
+      rule: "ガチホコバトル",
+      stage: "モズク農園",
+      team1: {
+        member: team_uta[3],
+        win: true,
+        dominance: "100"
+      },
+      team2: {
+        member: team_hisagi[3],
+        win: false,
+        domainance: "0"
+      },
+      hisagi_movie: "8411",
+      uta_movie: "9259"
+    },
+    {
+      rule: "ガチヤグラ",
+      stage: "チョウザメ造船",
+      team1: {
+        member: team_uta[3],
+        win: false,
+        dominance: "80"
+      },
+      team2: {
+        member: team_hisagi[3],
+        win: true,
+        domainance: "86"
+      },
+      hisagi_movie: "8712",
+      uta_movie: "9560"
+    }
+  ],
+  [
+    {
+      rule: "ガチホコバトル",
+      stage: "チョウザメ造船",
+      team1: {
+        member: team_uta[4],
+        win: true,
+        dominance: "94"
+      },
+      team2: {
+        member: team_hisagi[4],
+        win: false,
+        domainance: "21"
+      },
+      hisagi_movie: "9459",
+      uta_movie: "10307"
+    }
   ]
-};
+];
