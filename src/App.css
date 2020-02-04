@@ -7,7 +7,7 @@
 .container {
   border: 1px solid;
   border-radius: 4px;
-  background-color: azure; 
+  background-color: azure;
 }
 
 .App-header {
@@ -48,4 +48,24 @@
   padding: 10px;
   font-weight: 600;
   margin: 0px;
+}
+
+.foot {
+  display: block;
+  list-style-type: disc;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+}
+
+.youtubelink {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+@media screen and (max-width: 375px){
+  .youtubelink{
+    display: block;
+  }
 }

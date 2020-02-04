@@ -40,9 +40,9 @@ function Header() {
 
 function Body() {
   return (
-    <div style={{ width: "100%"}}>
+    <div style={{ width: "100%", bottom: "50px" }}>
       {match_result.map((match, i) => (
-        <div key={i} style={{margin:"0px 0px 10px 0px"}}>
+        <div key={i} style={{ margin: "0px 0px 10px 0px" }}>
           <details className="container">
             <summary>
               第{i + 1}周
@@ -115,16 +115,91 @@ function Body() {
           </details>
         </div>
       ))}
+      <details className="container">
+        <summary>
+          最終成績
+          <p>　</p>
+        </summary>
+        <div className="match-order">
+          <ul style={{ listStyle: "none" }}>
+            <li>炉龍うた</li>
+            <li>
+              {utaWinCalc(0) +
+                utaWinCalc(1) +
+                utaWinCalc(2) +
+                utaWinCalc(3) +
+                utaWinCalc(4)}
+              勝
+            </li>
+          </ul>
+
+          <ul style={{ listStyle: "none" }}>
+            <li>楸</li>
+            <li>
+              {hisagiWinCalc(0) +
+                hisagiWinCalc(1) +
+                hisagiWinCalc(2) +
+                hisagiWinCalc(3) +
+                hisagiWinCalc(4)}
+              勝
+            </li>
+          </ul>
+        </div>
+        <div style={{
+          fontSize:"24px",fontWeight:"900"
+          
+        }}>
+          <p>THE WINNER IS 楸</p>
+          <p>Congratulations!</p>
+        </div>
+      </details>
     </div>
   );
 }
 
+function Footer() {
+  return (
+    <div
+      className="foot"
+      style={{
+        backgroundColor: "black",
+        color: "white",
+        width: "100%"
+      }}
+    >
+      <p>SUBSCRIBE!</p>
+      <div className="youtubelink">
+        <iframe
+          style={{ border: "10px" }}
+          width="320px"
+          height="180px"
+          src="https://www.youtube.com/embed/XwdN0ggVzVs"
+          frameBorder="0"
+          allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+          allowFullScreen
+        ></iframe>
+        <iframe
+          style={{ border: "10px" }}
+          width="320px"
+          height="180px"
+          src="https://www.youtube.com/embed/CoXMwAL6GoY"
+          frameBorder="0"
+          allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+          allowFullScreen
+        ></iframe>
+      </div>
+      <p>制作 よつぎ</p>
+      <a href="https://github.com/yotsugi-vip/hisagi-uta">ソースコード</a>
+    </div>
+  );
+}
 class App extends Component {
   render() {
     return (
       <div className="App">
         <Header />
         <Body />
+        <Footer />
       </div>
     );
   }
