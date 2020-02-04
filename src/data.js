@@ -386,3 +386,15 @@ export const match_result = [
     }
   ]
 ];
+
+import hokke from "./picture/ホッケふ頭.png"
+
+export function stage( stage_name ) {
+  switch(stage_name)
+  {
+    case "ホッケふ頭":
+      return`url(${hokke})`;
+    default:
+      return`url(${hokke})`;
+  }
+}

@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "./App.css";
 import Header_img from "./picture/header.png";
-import { match_result, uta_movie_url, hisagi_movie_url } from "./data";
+import { match_result, uta_movie_url, hisagi_movie_url, stage } from "./data";
 import hoko_img from "./picture/hoko.png";
 import asari_img from "./picture/asari.png";
 import area_img from "./picture/area.png";
@@ -53,62 +53,77 @@ function Body() {
             </summary>
             {match.map((match, i) => (
               <div
-                className="match-result"
                 key={i}
                 style={{
-                  backgroundImage: `url(${
-                    match.rule === "ナワバリバトル"
-                      ? nawabari_img
-                      : match.rule === "ガチエリア"
-                      ? area_img
-                      : match.rule === "ガチホコバトル"
-                      ? hoko_img
-                      : match.rule === "ガチヤグラ"
-                      ? tower_img
-                      : match.rule === "ガチアサリ"
-                      ? asari_img
-                      : nawabari_img
-                  })`
+                  backgroundImage: stage("ホッケふ頭"),
+                  backgroundRepeat: "no-repeat",
+                  backgroundPosition: "center",
+                  backgroundSize: "70%"
                 }}
               >
-                <div className="result-display">
-                  <p
-                    className="result-winlose"
-                    style={
-                      match.team1.win ? { color: "orange" } : { color: "blue" }
-                    }
-                  >
-                    {match.team1.win ? "WIN" : "LOSE"}
-                  </p>
+                <div
+                  className="rule-img"
+                  style={{
+                    backgroundImage: `url(${
+                      match.rule === "ナワバリバトル"
+                        ? nawabari_img
+                        : match.rule === "ガチエリア"
+                        ? area_img
+                        : match.rule === "ガチホコバトル"
+                        ? hoko_img
+                        : match.rule === "ガチヤグラ"
+                        ? tower_img
+                        : match.rule === "ガチアサリ"
+                        ? asari_img
+                        : nawabari_img
+                    })`
+                  }}
+                >
+                  <div className="match-result" key={i}>
+                    <div className="result-display">
+                      <p
+                        className="result-winlose"
+                        style={
+                          match.team1.win
+                            ? { color: "orange" }
+                            : { color: "blue" }
+                        }
+                      >
+                        {match.team1.win ? "WIN" : "LOSE"}
+                      </p>
 
-                  <p
-                    className="result-winlose"
-                    style={
-                      match.team2.win ? { color: "orange" } : { color: "blue" }
-                    }
-                  >
-                    {match.team2.win ? "WIN" : "LOSE"}
-                  </p>
-                </div>
-                <div className="ul-team">
-                  <ul className="li-all">
-                    {match.team1.member.player.map((player, i) => (
-                      <li key={i}>{player}</li>
-                    ))}
-                  </ul>
-                  <ul className="li-all">
-                    {match.team2.member.player.map((player, i) => (
-                      <li key={i}>{player}</li>
-                    ))}
-                  </ul>
-                </div>
-                <div className="movie-link">
-                  <a href={hisagi_movie_url + "?t=" + match.hisagi_movie}>
-                    楸 試合リンク
-                  </a>
-                  <a href={uta_movie_url + "?t=" + match.uta_movie}>
-                    炉龍うた 試合リンク
-                  </a>
+                      <p
+                        className="result-winlose"
+                        style={
+                          match.team2.win
+                            ? { color: "orange" }
+                            : { color: "blue" }
+                        }
+                      >
+                        {match.team2.win ? "WIN" : "LOSE"}
+                      </p>
+                    </div>
+                    <div className="ul-team">
+                      <ul className="li-all">
+                        {match.team1.member.player.map((player, i) => (
+                          <li key={i}>{player}</li>
+                        ))}
+                      </ul>
+                      <ul className="li-all">
+                        {match.team2.member.player.map((player, i) => (
+                          <li key={i}>{player}</li>
+                        ))}
+                      </ul>
+                    </div>
+                    <div className="movie-link">
+                      <a href={hisagi_movie_url + "?t=" + match.hisagi_movie}>
+                        楸 試合リンク
+                      </a>
+                      <a href={uta_movie_url + "?t=" + match.uta_movie}>
+                        炉龍うた 試合リンク
+                      </a>
+                    </div>
+                  </div>
                 </div>
               </div>
             ))}
@@ -121,7 +136,7 @@ function Body() {
           <p>　</p>
         </summary>
         <div className="match-order">
-          <ul style={{ listStyle: "none" }}>
+          <ul style={{ listStyle: "none", padding: "0px" }}>
             <li>炉龍うた</li>
             <li>
               {utaWinCalc(0) +
@@ -133,7 +148,7 @@ function Body() {
             </li>
           </ul>
 
-          <ul style={{ listStyle: "none" }}>
+          <ul style={{ listStyle: "none", padding: "0px" }}>
             <li>楸</li>
             <li>
               {hisagiWinCalc(0) +
@@ -145,10 +160,12 @@ function Body() {
             </li>
           </ul>
         </div>
-        <div style={{
-          fontSize:"24px",fontWeight:"900"
-          
-        }}>
+        <div
+          style={{
+            fontSize: "24px",
+            fontWeight: "900"
+          }}
+        >
           <p>THE WINNER IS 楸</p>
           <p>Congratulations!</p>
         </div>
@@ -170,7 +187,7 @@ function Footer() {
       <p>SUBSCRIBE!</p>
       <div className="youtubelink">
         <iframe
-          style={{ border: "10px" }}
+          className="ytglink"
           width="320px"
           height="180px"
           src="https://www.youtube.com/embed/XwdN0ggVzVs"
@@ -179,7 +196,7 @@ function Footer() {
           allowFullScreen
         ></iframe>
         <iframe
-          style={{ border: "10px" }}
+          className="ytglink"
           width="320px"
           height="180px"
           src="https://www.youtube.com/embed/CoXMwAL6GoY"
