@@ -26,11 +26,18 @@
   margin: 15px 0px;
 }
 
-.rule-img{
+.rule-img {
   background-repeat: no-repeat;
   background-position: center;
   background-color: rgba(240, 255, 255, 0.7);
   background-blend-mode: lighten;
+}
+
+
+.stage-img {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 70%;
 }
 
 .result-display,
@@ -68,7 +75,7 @@
 }
 
 @media screen and (max-width: 1080px) {
-  .rule-img{
+  .rule-img {
     background-size: 40%;
     background-repeat: no-repeat;
     background-position: center;
@@ -76,13 +83,18 @@
     background-blend-mode: lighten;
   }
 
+  .stage-img {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
+  }
+
   .youtubelink {
     display: block;
   }
 
-  .ytglink{
+  .ytglink {
     width: 90%;
     height: 100%;
   }
 }
-
