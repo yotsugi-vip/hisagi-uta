@@ -114,11 +114,11 @@ function Body() {
                       </ul>
                     </div>
                     <div className="movie-link">
-                      <a href={hisagi_movie_url + "?t=" + match.hisagi_movie}>
-                        楸 試合リンク
-                      </a>
                       <a href={uta_movie_url + "?t=" + match.uta_movie}>
                         炉龍うた 試合リンク
+                      </a>
+                      <a href={hisagi_movie_url + "?t=" + match.hisagi_movie}>
+                        楸 試合リンク
                       </a>
                     </div>
                   </div>
@@ -165,7 +165,7 @@ function Body() {
           }}
         >
           <p>THE WINNER IS 楸</p>
-          <p>Congratulations!</p>
+          <p className="winner">Congratulations!</p>
         </div>
       </details>
     </div>
