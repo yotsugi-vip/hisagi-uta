@@ -54,11 +54,9 @@ function Body() {
             {match.map((match, i) => (
               <div
                 key={i}
+                className="stage-img"
                 style={{
-                  backgroundImage: stage("ホッケふ頭"),
-                  backgroundRepeat: "no-repeat",
-                  backgroundPosition: "center",
-                  backgroundSize: "70%"
+                  backgroundImage: stage(match.stage)
                 }}
               >
                 <div
